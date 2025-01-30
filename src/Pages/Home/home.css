@@ -1,0 +1,270 @@
+.short-Width{
+    max-width: 85%;
+    margin: auto;
+    /* margin-left:8rem ; */
+}
+#paneer-img{
+    width: 100%;
+}
+#liter-img{
+    display: none;
+}
+.laptop-view{
+    display: flex;
+    /* gap: 20px; */
+    justify-content: space-between;
+    padding: 0px 2rem;
+  }
+  .three-img img{
+  cursor: pointer;
+    width: 30%;
+}
+.mobile-view{
+    display: none;
+    width: 100%;
+}
+.mobile-view-three-img{
+    display: none;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    margin-top: 1rem;
+}
+
+.grid-items img{
+    width: 100%;
+}
+
+.shop-sports-para{
+  padding: 10px;
+  font-size: 25px;
+  /* font-weight: poppins; */
+  font-weight: 700;
+}
+.carousel-container-2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 16px;
+  }
+  
+  .carousel-2 {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 16px; 
+    padding: 16px 0; 
+    width: 100%;
+    scrollbar-width: none; 
+    scroll-snap-type: x mandatory;
+    margin-top: 1rem; 
+  }
+  
+  .carousel-2::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .carousel-item-2 {
+    flex: 0 0 auto;
+    width: 180px; /* Adjusted width to prevent large item overflow */
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    border: 0.5px solid rgb(220, 219, 219);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .carousel-image-2 {
+    width: 100%;
+    border-radius: 0px;
+  }
+  
+  
+  .scroll-button-2 {
+    position: absolute;
+    top: 0px;
+    transform: translateY(-50%);
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+  }
+  
+  .scroll-button-2.left-2 {
+    right: 55px;
+    overflow: hidden;
+    transform: none;
+    background-color: rgb(234, 234, 234);
+}
+
+.scroll-button-2.right-2 {
+    background-color: rgb(237, 237, 237);
+      overflow: hidden;
+    right: 10px;
+    transform: none;
+  }
+  #left-img,#right-img{
+    width: 15px;
+  }
+  .min-clock{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  #watch{
+    width: 12px;
+  }
+.min-para{
+    font-size: 12px;
+  color: black;
+
+}
+.lineheight{
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+.fisrt-caroucel-para{
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+  min-height: 6vh;
+}
+.second-caroucel-para{
+  font-size: 12px;
+  color: rgb(156, 154, 154);
+  margin-top: 5px;
+}
+.price-add{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+.price{
+  font-size: 13px;
+  font-weight: 600;
+  color: black;
+
+}
+.add-button{
+  background-color: white;
+  color: green;
+  border: 0.5px solid green;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.svg{
+  position: absolute;
+  top: 0;
+}
+.percantage{
+  position: relative;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.percantage :first-child {
+  font-size: 10px;
+  color: aliceblue;
+  font-weight: 900;
+}
+.percantage:nth-child(2) {
+  font-size: 8px;
+  color: aliceblue;
+  font-weight: 900;
+}
+#second-img-pan{
+  display: none;
+}
+
+@media (max-width:1000px) {
+  .short-Width {
+    max-width: 95%;
+    margin: auto;
+  }
+  #paneer-img {
+    display: none;
+}
+#liter-img {
+  display: none;
+  display: block;
+  width: 100%;
+}
+.three-img{
+  margin-top: 1rem;
+}
+.laptop-view {
+  display: none;
+}
+.mobile-view  {
+  display: flex;
+  gap: 8px;
+}
+.mobile-view-three-img{
+  display: flex;
+  margin-top: 10px;
+  gap: 5px;
+}
+.mobile-view-three-img img {
+  width: 24%;
+  background: #cce4ee96;
+  border-radius: 10px;
+}
+#three-img-moblie{
+  width: 50%;
+}
+.mobile-view img {
+  width: 49.5%;
+  background: #cce4ee96;
+  border-radius: 10px;
+
+}
+.grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: inherit;
+}
+.scroll-button-2{
+  display: none;
+}
+.carousel-2 {
+  margin-top: 0;
+}
+.carousel-container-2 {
+  padding: 10px;
+}
+}
+
+@media (min-width:850px) and (max-width:1200px) {
+  .grid {
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: inherit;
+}
+  .short-Width {
+    max-width: 98%;
+}
+}
+@media (min-width:1200px) and (max-width:1350px) {
+  .short-Width {
+    max-width: 95%;
+}
+}
+
+
+
