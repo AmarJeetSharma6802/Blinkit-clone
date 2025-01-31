@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"; 
-import "./Pharmacy.css";
+import "./pharmacy.css";
 import RightPharmacy from "./RightPharmacy";
 
 function Pharmacy() {
