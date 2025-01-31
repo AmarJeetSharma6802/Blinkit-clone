@@ -1,3 +1,3 @@
 vercel deploy :- https://blinkit-clone-red.vercel.app/ 
 
-render deploy : -
+render deploy : - https://blinkit-clone-c3b3.onrender.com/
