@@ -52,7 +52,7 @@
   overflow-x: auto;  
   scrollbar-width: none;  
   -ms-overflow-style: none; 
-  width: 75%;
+  width: 100%;
   scroll-behavior: smooth;
 }
 
