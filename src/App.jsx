@@ -26,6 +26,8 @@ function App() {
         <Route path="vegitable" element={<Vegitable/>}/> 
         <Route path="/slectedHomeImage/:id/:FirstP" element={<SelectedHomepageItems/>}/> 
         <Route path="/slectedPharmacy/:id/:FirstP" element={<SelectedPharmacy/>}/> 
+        <Route path="/slectedVegitable/:id/:FirstP" element={<SelectedPharmacy/>}/> 
+
 
       </Route>
     )

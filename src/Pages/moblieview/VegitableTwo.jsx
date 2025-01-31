@@ -1,6 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux"; 
+import { addItem } from "../Reducer/cartSlice";
 
 function VegitableTwo() {
+   const dispatch = useDispatch();
     const rightPharmacyItems = [
         {
           id: 1,
@@ -255,6 +259,9 @@ function VegitableTwo() {
         
       
   ]
+  const handleAddToCart = (item) => {
+    dispatch(addItem(item));
+  };
   return (
     <div>
         <div className="rightpharmacy-itmes">
@@ -262,7 +269,7 @@ function VegitableTwo() {
                 rightPharmacyItems.map((item, index) => {
                     return(
                         <div key={index} className="rightpharmacy-item">
-                            <div className="rightpharmacy-img">
+                            <Link to={`/slectedVegitable/${item.id}/${item.FirstP}`} className="rightpharmacy-img">
                                 <img
                                   src={item.img}
                                   alt=""
@@ -282,12 +289,20 @@ function VegitableTwo() {
                           </div>
 
                           </div>
-                            </div>
+                            </Link>
                             <p className='pharmacy-para-details'>{item.FirstP}</p>
                             <p className='second-caroucel-para'>{item.secondP}</p>
                             <div className="rightpharmacy-price price-add ">
                                 <p className='price'>₹{item.price}</p>
-                                <button className='add-button'>ADD</button>
+                                <button
+                  className="add-button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleAddToCart(item);
+                  }}
+                >
+                  ADD
+                </button>
                             </div>
                         </div>
                     )

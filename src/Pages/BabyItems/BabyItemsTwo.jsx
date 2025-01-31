@@ -1,6 +1,10 @@
 import React from 'react'
+import { useDispatch } from "react-redux"; 
+import { addItem } from "../Reducer/cartSlice";
 
 function BabyItemsTwo() {
+    const dispatch = useDispatch();
+  
     const rightPharmacyItems = [
         {
           id: 1,
@@ -149,6 +153,9 @@ function BabyItemsTwo() {
         
       
   ]
+  const handleAddToCart = (item) => {
+      dispatch(addItem(item));
+    };
   return (
     <div>
         <div className="rightpharmacy-itmes">
@@ -181,7 +188,15 @@ function BabyItemsTwo() {
                             <p className='second-caroucel-para'>{item.secondP}</p>
                             <div className="rightpharmacy-price price-add ">
                                 <p className='price'>₹{item.price}</p>
-                                <button className='add-button'>ADD</button>
+                                <button
+                  className="add-button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleAddToCart(item);
+                  }}
+                >
+                  ADD
+                </button>
                             </div>
                         </a>
                     )
