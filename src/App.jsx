@@ -10,6 +10,8 @@ import BabyItems from './Pages/BabyItems/BabyItems';
 import SelectedHomepageItems from './Pages/SelctedProduct/SelectedHomepageItems';
 import Vegitable from './Pages/moblieview/Vegitable';
 import SelectedPharmacy from './Pages/SelctedProduct/SelectedPharmacy';
+import Milk from './Pages/milk/Milk';
+import SlectedMilk from './Pages/SelctedProduct/SlectedMilk';
 function App() {
 
 
@@ -23,11 +25,12 @@ function App() {
         <Route path="masks-sanitizers" element={<Sanitizers/>}/> 
         <Route path="patFood" element={<PatFood/>}/> 
         <Route path="BabyItems" element={<BabyItems/>}/> 
+        <Route path="milk" element={<Milk/>}/> 
         <Route path="vegitable" element={<Vegitable/>}/> 
         <Route path="/slectedHomeImage/:id/:FirstP" element={<SelectedHomepageItems/>}/> 
         <Route path="/slectedPharmacy/:id/:FirstP" element={<SelectedPharmacy/>}/> 
         <Route path="/slectedVegitable/:id/:FirstP" element={<SelectedPharmacy/>}/> 
-
+        <Route path="/slectedMilk/:id/:FirstP" element={<SlectedMilk/>}/> 
 
       </Route>
     )

@@ -162,6 +162,15 @@
     bottom: 34px;
 }
 
+.milk{
+    padding: 10px;
+}
+.milk-height{
+    height: 55px;
+}
+#itmes-img-pharmacy-milk{
+    height: 75px;
+}
 @media (max-width:850px) {
     .pharmacy {
         max-width: 100%;

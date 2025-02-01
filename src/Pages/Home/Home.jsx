@@ -108,6 +108,10 @@ function Home() {
   const vegitaleBtn = () => {
     navigate('/vegitable')
   }
+  const milkBtn = () => {
+    navigate('/milk')
+  }
+
   return (
     <div>
       <Helmet>
@@ -139,7 +143,7 @@ function Home() {
       </div>
       <div className="mobile-view">
        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=450/app/images/category/cms_images/icon/1487_1679466558536.png" alt="" onClick={vegitaleBtn} />
-       <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=450/app/images/category/cms_images/icon/14_1678949253289.png" alt="" />
+       <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=450/app/images/category/cms_images/icon/14_1678949253289.png" alt="" onClick={milkBtn} />
       </div>
         </div>
 
