@@ -113,7 +113,7 @@ function BabyItems() {
         <meta property="og:image" content="https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/ozrgpc6hulbfxyi1zeqd" />
         <meta property="og:title" content="Everything delivered in minutes" />
         <meta property="og:description" content="Get all your daily essentials delivered to your doorstep in minutes. Fast, reliable, and convenient service."/>
-        {/* <link rel="canonical" href="https://www.yourwebsite.com/home" /> */}
+        <link rel="canonical" href="https://blinkit-clone-c3b3.onrender.com/BabyItems" />
         <meta property="og:type" content="website" />
         <meta property='tg:title' content='Everything delivered in minutes' />
         
