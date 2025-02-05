@@ -117,7 +117,7 @@ function Home() {
       <Helmet>
         <title>Everything Delivered in Minutes</title>
         <meta name="description" content="Get all your daily essentials delivered to your doorstep in minutes. Fast, reliable, and convenient service." />
-        <meta name="keywords" content="delivery, essentials, fast delivery, online shopping, groceries, home delivery" />
+        <meta name="keywords" content="Experience the convenience of quick home delivery for all your essential groceries, making online shopping effortless and speedy." />
         <meta name="robots" content="index, follow" />
         <meta property="og:site_name" content="Blinkit clone" />
         <meta property="og:image" content="hhttps://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/ozrgpc6hulbfxyi1zeqd" />
