@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blinkit-clone-c3b3.onrender.com/sitemap.xml
