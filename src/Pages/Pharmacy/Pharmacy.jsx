@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"; 
 import "./pharmacy.css";
 import RightPharmacy from "./RightPharmacy";
+import { Helmet } from "react-helmet";
+
 
 function Pharmacy() {
   const [activeId, setActiveId] = useState(1); 
@@ -99,6 +101,18 @@ function Pharmacy() {
 
   return (
     <div>
+      <Helmet>
+        <title>Top Rated Pharmacy Near You – Trusted Medicines and Care</title>
+        <meta name="description" content="Shop the best selection of prescription medications, generic drugs, and health products at competitive prices. Our online pharmacy offers secure ordering and fast home delivery, making healthcare accessible and convenient for everyone." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:site
+        _name" content="HealthyMeds" />
+        <meta property="og:title" content="Top Rated Pharmacy Near You – Trusted Medicines and Care"/>
+        <meta property="og:image" content="https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/ozrgpc6hulbfxyi1zeqd" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://blinkit-clone-c3b3.onrender.com/pharmacy" />
+
+      </Helmet>
       <div className="top-deatils">
         <ul className="top-details-ul">
           <li className="top-details-li">Vegetables & Fruits</li>
