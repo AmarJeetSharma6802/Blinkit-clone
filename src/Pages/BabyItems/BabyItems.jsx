@@ -103,7 +103,7 @@ function BabyItems() {
     <div>
 <Helmet>
 
-        <title>Buy Diapers & More Online | Grofers</title>
+        <title>Buy Baby Diapers & Essentials Online | Blinkit Clone</title>
         <meta name="description" content="
         Our diapers are made with soft, breathable materials that keep your baby dry and comfortable all day and night." />
         <meta name="keywords" content="
