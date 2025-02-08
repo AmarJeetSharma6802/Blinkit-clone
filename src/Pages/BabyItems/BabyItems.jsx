@@ -105,13 +105,13 @@ function BabyItems() {
 
         <title>Buy Diapers & More Online | Grofers</title>
         <meta name="description" content="
-        Grofers offers a wide range of baby care products online. Buy diapers, baby food, baby clothes. " />
+        Our diapers are made with soft, breathable materials that keep your baby dry and comfortable all day and night." />
         <meta name="keywords" content="
         baby care products, buy diapers online, baby food, baby clothes, baby accessories." />
         <meta name="robots" content="index, follow" />
         <meta property="og:site_name" content="Blinkit clone" />
         <meta property="og:image" content="https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/ozrgpc6hulbfxyi1zeqd" />
-        <meta property="og:title" content="Everything delivered in minutes" />
+        <meta property="og:title" content="Eco-Friendly Diapers – Protect Your Baby and the Planet" />
         <meta property="og:description" content="Get all your daily essentials delivered to your doorstep in minutes. Fast, reliable, and convenient service."/>
         <link rel="canonical" href="https://blinkit-clone-c3b3.onrender.com/BabyItems" />
         <meta property="og:type" content="website" />
