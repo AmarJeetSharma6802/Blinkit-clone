@@ -6,6 +6,13 @@
          <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <url>
+        <loc>https://blinkit-clone-c3b3.onrender.com/pharmacy</loc>
+        <lastmod>2024-02-05</lastmod>
+         <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
     
     <url>
         <loc>https://blinkit-clone-c3b3.onrender.com/BabyItems</loc>
@@ -13,10 +20,5 @@
          <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
-        <loc>https://blinkit-clone-c3b3.onrender.com/pharmacy</loc>
-        <lastmod>2024-02-05</lastmod>
-         <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
+    
 </urlset>
