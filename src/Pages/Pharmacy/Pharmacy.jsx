@@ -105,8 +105,7 @@ function Pharmacy() {
         <title>Top Rated Pharmacy Near You – Trusted Medicines and Care</title>
         <meta name="description" content="Shop the best selection of prescription medications, generic drugs, and health products at competitive prices. Our online pharmacy offers secure ordering and fast home delivery, making healthcare accessible and convenient for everyone." />
         <meta name="robots" content="index, follow" />
-        <meta property="og:site
-        _name" content="HealthyMeds" />
+        <meta property="og:site_name" content="HealthyMeds" />
         <meta property="og:title" content="Top Rated Pharmacy Near You – Trusted Medicines and Care"/>
         <meta property="og:image" content="https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/ozrgpc6hulbfxyi1zeqd" />
         <meta property="og:type" content="website" />
