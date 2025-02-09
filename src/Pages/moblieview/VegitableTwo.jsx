@@ -269,7 +269,7 @@ function VegitableTwo() {
                 rightPharmacyItems.map((item, index) => {
                     return(
                         <div key={index} className="rightpharmacy-item">
-                            <Link to={`/slectedVegitable/${item.id}/${item.FirstP}`} className="rightpharmacy-img">
+                            <Link to={`/selectedVegitable/${item.id}/${item.FirstP}`} className="rightpharmacy-img">
                                 <img
                                   src={item.img}
                                   alt=""

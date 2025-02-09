@@ -218,8 +218,15 @@ header {
     align-items: center;
     gap: 5px;
   }
+  .back-awwor{
+    display: none;
+    cursor: pointer;
+  }
 
   @media (max-width:1000px) {
+    .back-awwor{
+      display: block;
+    }
     .view-cart{
       display: flex;
       align-items: center;
@@ -267,6 +274,7 @@ justify-content: space-between;
   .login-logo{
     display: flex;
     align-items: center;
+    gap: 10px;
   }
   .LoginId{
     display: block;

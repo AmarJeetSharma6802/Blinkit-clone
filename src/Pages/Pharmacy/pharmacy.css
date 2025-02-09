@@ -171,7 +171,7 @@
 #itmes-img-pharmacy-milk{
     height: 75px;
 }
-@media (max-width:850px) {
+@media (max-width:1000px) {
     .pharmacy {
         max-width: 100%;
     }

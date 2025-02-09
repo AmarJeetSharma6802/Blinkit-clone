@@ -12,6 +12,7 @@ import Vegitable from './Pages/moblieview/Vegitable';
 import SelectedPharmacy from './Pages/SelctedProduct/SelectedPharmacy';
 import Milk from './Pages/milk/Milk';
 import SlectedMilk from './Pages/SelctedProduct/SlectedMilk';
+import SelctedVegitable from './Pages/SelctedProduct/SelectedVegitable';
 function App() {
 
 
@@ -29,8 +30,8 @@ function App() {
         <Route path="vegitable" element={<Vegitable/>}/> 
         <Route path="/slectedHomeImage/:id/:FirstP" element={<SelectedHomepageItems/>}/> 
         <Route path="/slectedPharmacy/:id/:FirstP" element={<SelectedPharmacy/>}/> 
-        <Route path="/slectedVegitable/:id/:FirstP" element={<SelectedPharmacy/>}/> 
         <Route path="/slectedMilk/:id/:FirstP" element={<SlectedMilk/>}/> 
+        <Route path="/selectedVegitable/:id/:FirstP" element={<SelctedVegitable/>}/> 
 
       </Route>
     )
