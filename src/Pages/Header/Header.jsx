@@ -53,7 +53,6 @@ const [cartActive,setCartActive]= useState(false)
   }
   const addtoCarBtn=()=>{
     setCartActive((prev) => ! prev)
-  
   }
 
   const closeCart=()=>{
