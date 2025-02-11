@@ -103,7 +103,8 @@ function Pharmacy() {
     <div>
       <Helmet>
         <title>Top Rated Pharmacy Near You – Trusted Medicines and Care</title>
-        <meta name="description" content="Shop the best selection of prescription medications, generic drugs, and health products at competitive prices. Our online pharmacy offers secure ordering and fast home delivery, making healthcare accessible and convenient for everyone." />
+        <meta name="description" content="Buy medicines online from a trusted pharmacy. Get prescription and generic drugs delivered fast to your doorstep. Secure & affordable healthcare solutions."/>
+
        <meta name="keywords" content="online pharmacy, buy medicines online, trusted pharmacy, prescription drugs, generic drugs, health products"/>
         <meta name="robots" content="index, follow" />
         <meta property="og:site_name" content="HealthyMeds" />
