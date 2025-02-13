@@ -15,6 +15,7 @@ dist-ssr
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+src/Pages/SelctedProduct/
 .idea
 .DS_Store
 *.suo
@@ -22,5 +23,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-src/Pages/SelctedProduct/
