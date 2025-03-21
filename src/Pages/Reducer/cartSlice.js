@@ -22,7 +22,7 @@ const cartSlice = createSlice({
       const existingItem = state.items.find((item) => item.id === newItem.id);
 
       state.totalQuantity++; // Increase total quantity
-      const itemPrice = parseFloat(newItem.price); // Ensure price is a number
+      const itemPrice = parseFloat(newItem.price); 
 
       if (!existingItem) {
         state.items.push({
