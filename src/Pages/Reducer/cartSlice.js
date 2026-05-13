@@ -16,6 +16,7 @@ const saveToLocalStorage = (state) => {
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
+  
   reducers: {
     addItem(state, action) {
       const newItem = action.payload;
@@ -35,6 +36,7 @@ const cartSlice = createSlice({
           img: newItem.img, 
           secondP :newItem.secondP
         });
+        
         state.totalPrice += itemPrice; // Add item's price to total price
       } else {
         existingItem.quantity++;
