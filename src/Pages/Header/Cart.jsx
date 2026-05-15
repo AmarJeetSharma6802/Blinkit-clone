@@ -21,6 +21,20 @@ const Cart = ({ closeCart }) => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
+  const getItemName = (item) => {
+    const savedName = item.name || item.FirstP || item.item_name;
+
+    if (savedName) {
+      return savedName;
+    }
+
+    const previousItem = window.dataLayer
+      ?.flatMap((entry) => entry?.ecommerce?.items || [])
+      .find((dataLayerItem) => dataLayerItem.item_id === item.id);
+
+    return previousItem?.item_name || `Item ${item.id}`;
+  };
+
   //  ye view_Cart for google ads traking
   useEffect(() => {
     if (cart.items.length > 0) {
@@ -35,7 +49,7 @@ const Cart = ({ closeCart }) => {
           items: cart.items.map((item) => ({
             item_id: item.id,
 
-            item_name: item.name || item.FirstP,
+            item_name: getItemName(item),
 
             price: Number(item.price),
 
@@ -57,7 +71,7 @@ const Cart = ({ closeCart }) => {
         items: [
           {
             item_id: item.id,
-            item_name: item.name || item.FirstP,
+            item_name: getItemName(item),
             price: Number(item.price),
             quantity: 1,
           },
@@ -90,7 +104,7 @@ const Cart = ({ closeCart }) => {
         items: cart.items.map((item) => ({
           item_id: item.id,
 
-          item_name: item.name || item.FirstP,
+          item_name: getItemName(item),
           price: item.price,
 
           quantity: item.quantity,
