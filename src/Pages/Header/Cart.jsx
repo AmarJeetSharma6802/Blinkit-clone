@@ -1,10 +1,11 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, removeItem, clearCart } from "../Reducer/cartSlice";
 import "../Reducer/cart.css";
 import bill from "../../assets/bar.png";
 import scootor from "../../assets/motorbike.png";
 import { pushToDataLayer } from "../../lib/gtm";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ closeCart }) => {
   const texes = [
@@ -14,6 +15,8 @@ const Cart = ({ closeCart }) => {
       Handling: 4,
     },
   ];
+
+  const navigate = useNavigate();
 
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -75,6 +78,31 @@ const Cart = ({ closeCart }) => {
     console.log("Cart after clearing:", cart); // Verify cart is cleared
   };
 
+  const handleCheckout = () => {
+    pushToDataLayer({
+      event: "begin_checkout",
+
+      ecommerce: {
+        currency: "INR",
+
+        value: cart.totalPrice,
+
+        items: cart.items.map((item) => ({
+          item_id: item.id,
+
+          item_name: item.name,
+
+          price: item.price,
+
+          quantity: item.quantity,
+        })),
+      },
+    });
+
+    console.log("begin_checkout fired");
+
+    navigate("/checkout");
+  };
   return (
     <div className="cart">
       <div className="cart-details">
@@ -193,7 +221,9 @@ const Cart = ({ closeCart }) => {
             <p className="total-price-p">Total Price: ₹{totalPriceWithTaxes}</p> 
             </div> */}
 
-            <button className="checkout">Proceed Item</button>
+            <button className="checkout" onClick={handleCheckout}>
+              Proceed Item
+            </button>
             <button onClick={handleClearCart} className="clear-cart-btn">
               Clear Cart
             </button>
