@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem } from "../Reducer/cartSlice";
+import { pushToDataLayer } from "../../lib/gtm";
 
 function RightPharmacy() {
   const dispatch = useDispatch();

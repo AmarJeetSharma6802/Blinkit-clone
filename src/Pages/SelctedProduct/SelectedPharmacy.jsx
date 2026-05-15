@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import throttle from "lodash/throttle";
 import { useDispatch } from "react-redux";
 import { addItem } from "../Reducer/cartSlice";
+import { pushToDataLayer } from "../../lib/gtm";
 
 const images = [
   {
@@ -320,6 +321,22 @@ const SelectedPharmacy = () => {
 
   const handleAddToCart = (item) => {
     dispatch(addItem(item));
+
+    pushToDataLayer({
+      event: "add_to_cart",
+      ecommerce: {
+        currency: "INR",
+        value: Number(item.price),
+        items: [
+          {
+            item_id: item.id,
+            item_name: item.FirstP || item.name,
+            price: Number(item.price),
+            quantity: 1,
+          },
+        ],
+      },
+    });
   };
 
   return (

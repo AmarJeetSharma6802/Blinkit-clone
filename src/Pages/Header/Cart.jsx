@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, removeItem, clearCart } from "../Reducer/cartSlice";
 import "../Reducer/cart.css";
 import bill from "../../assets/bar.png";
 import scootor from "../../assets/motorbike.png";
+import { pushToDataLayer } from "../../lib/gtm";
 
 const Cart = ({ closeCart }) => {
   const texes = [
@@ -17,6 +18,51 @@ const Cart = ({ closeCart }) => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
+  //  ye view_Cart for google ads traking
+  useEffect(() => {
+    if (cart.items.length > 0) {
+      pushToDataLayer({
+        event: "view_cart",
+
+        ecommerce: {
+          currency: "INR",
+
+          value: cart.totalPrice,
+
+          items: cart.items.map((item) => ({
+            item_id: item.id,
+
+            item_name: item.name,
+
+            price: Number(item.price),
+
+            quantity: item.quantity,
+          })),
+        },
+      });
+    }
+  }, []);
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+
+    pushToDataLayer({
+      event: "add_to_cart",
+      ecommerce: {
+        currency: "INR",
+        value: Number(item.price),
+        items: [
+          {
+            item_id: item.id,
+            item_name: item.FirstP || item.name,
+            price: Number(item.price),
+            quantity: 1,
+          },
+        ],
+      },
+    });
+  };
+
   const isPriceLessThanOrEqual500 = cart.totalPrice <= 500;
 
   // If the price is greater than ₹500, set taxes to zero
@@ -26,7 +72,7 @@ const Cart = ({ closeCart }) => {
 
   const handleClearCart = () => {
     dispatch(clearCart());
-    console.log('Cart after clearing:', cart); // Verify cart is cleared
+    console.log("Cart after clearing:", cart); // Verify cart is cleared
   };
 
   return (
@@ -48,7 +94,9 @@ const Cart = ({ closeCart }) => {
                     <img src={item.watch} alt="" id="watch-cart" />
                     <div className="shipment">
                       <p className="devivery-para">Delivery in 8 minutes</p>
-                      <p className="shipment">Shipment of {item.quantity} item</p>
+                      <p className="shipment">
+                        Shipment of {item.quantity} item
+                      </p>
                     </div>
                   </div>
 
@@ -74,7 +122,7 @@ const Cart = ({ closeCart }) => {
                       </button>
                       <p className="count-shipment">{item.quantity}</p>
                       <button
-                        onClick={() => dispatch(addItem(item))}
+                        onClick={() => handleAddItem(item)}
                         className="addBtn"
                       >
                         +
@@ -106,40 +154,37 @@ const Cart = ({ closeCart }) => {
                     </div>
                     <div className="bill-details-p">
                       <p className="price-bill"> ₹{item.price} </p>
-                      {isPriceLessThanOrEqual500 && texes.map((tax, index) => (
-                        <div key={index}>
-                          <p className="price-bill">₹{tax.Delivery}</p>
-                          <p className="price-bill">₹{tax.Handling}</p>
-                        </div>
-                      ))}
+                      {isPriceLessThanOrEqual500 &&
+                        texes.map((tax, index) => (
+                          <div key={index}>
+                            <p className="price-bill">₹{tax.Delivery}</p>
+                            <p className="price-bill">₹{tax.Handling}</p>
+                          </div>
+                        ))}
                       {!isPriceLessThanOrEqual500 && (
                         <div>
                           <p className="price-bill">₹0</p>
-                          <p className="price-bill">₹0</p> 
+                          <p className="price-bill">₹0</p>
                         </div>
                       )}
                       <p>
-                        <p className="grand-total">
-                          ₹{totalPriceWithTaxes}
-                        </p>
+                        <p className="grand-total">₹{totalPriceWithTaxes}</p>
                       </p>
                     </div>
                   </div>
                 </div>
-               
               </div>
-              
             ))
           )}
-          
-          
         </div>
         <div className="cancel-product">
-            <p className="cancel-policy">Cancellation Policy</p>
-            <p className="orders-para">Orders cannot be cancelled once packed for delivery. In case of unexpected delays, a refund will be provided, if applicable.</p>
-          </div>
+          <p className="cancel-policy">Cancellation Policy</p>
+          <p className="orders-para">
+            Orders cannot be cancelled once packed for delivery. In case of
+            unexpected delays, a refund will be provided, if applicable.
+          </p>
+        </div>
 
-         
         {cart.items.length > 0 && (
           <div className="quantity-clear-btn">
             {/* Display the total price with or without taxes */}
@@ -147,9 +192,11 @@ const Cart = ({ closeCart }) => {
             <p className="total-price-p">Total Quantity: {cart.totalQuantity}</p>
             <p className="total-price-p">Total Price: ₹{totalPriceWithTaxes}</p> 
             </div> */}
-           
+
             <button className="checkout">Proceed Item</button>
-            <button onClick={handleClearCart} className="clear-cart-btn">Clear Cart</button>
+            <button onClick={handleClearCart} className="clear-cart-btn">
+              Clear Cart
+            </button>
           </div>
         )}
       </div>

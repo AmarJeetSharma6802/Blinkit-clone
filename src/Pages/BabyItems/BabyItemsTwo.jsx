@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from "react-redux"; 
 import { addItem } from "../Reducer/cartSlice";
+import { pushToDataLayer } from "../../lib/gtm";
 
 function BabyItemsTwo() {
     const dispatch = useDispatch();
@@ -155,6 +156,22 @@ function BabyItemsTwo() {
   ]
   const handleAddToCart = (item) => {
       dispatch(addItem(item));
+
+      pushToDataLayer({
+        event: "add_to_cart",
+        ecommerce: {
+          currency: "INR",
+          value: Number(item.price),
+          items: [
+            {
+              item_id: item.id,
+              item_name: item.FirstP,
+              price: Number(item.price),
+              quantity: 1,
+            },
+          ],
+        },
+      });
     };
   return (
     <div>

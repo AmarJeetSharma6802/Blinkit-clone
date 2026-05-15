@@ -4,6 +4,7 @@ import leftArrow from "../../assets/left-arrow.png"
 import './home.css'
 import { useDispatch } from "react-redux"; 
 import { addItem } from "../Reducer/cartSlice";
+import { pushToDataLayer } from "../../lib/gtm";
 
 function HomeCaroucelThree() {
     const itemMember =[
@@ -199,9 +200,36 @@ function HomeCaroucelThree() {
         // Disable right button when at the end
         setCanScrollRight(carousel.scrollLeft < maxScrollLeft);
       };
-       const handleAddToCart = (item) => {
+      //  const handleAddToCart = (item) => {
+      //     dispatch(addItem(item));
+      // };
+
+
+      const handleAddToCart = (item) => {
           dispatch(addItem(item));
-      };
+      
+          pushToDataLayer({
+            event: "add_to_cart",
+      
+            ecommerce: {
+              currency: "INR",
+      
+              value: Number(item.price),
+      
+              items: [
+                {
+                  item_id: item.id,
+      
+                  item_name: item.FirstP,
+      
+                  price: Number(item.price),
+      
+                  quantity: 1,
+                },
+              ],
+            },
+          });
+        };
     
   return (
     <div>
