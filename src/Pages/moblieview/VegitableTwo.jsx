@@ -271,7 +271,7 @@ function VegitableTwo() {
         items: [
           {
             item_id: item.id,
-            item_name: item.FirstP,
+            item_name: item.name || item.FirstP,
             price: Number(item.price),
             quantity: 1,
           },

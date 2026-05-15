@@ -35,7 +35,7 @@ const Cart = ({ closeCart }) => {
           items: cart.items.map((item) => ({
             item_id: item.id,
 
-            item_name: item.name,
+            item_name: item.name || item.FirstP,
 
             price: Number(item.price),
 
@@ -57,7 +57,7 @@ const Cart = ({ closeCart }) => {
         items: [
           {
             item_id: item.id,
-            item_name: item.FirstP || item.name,
+            item_name: item.name || item.FirstP,
             price: Number(item.price),
             quantity: 1,
           },
@@ -90,8 +90,7 @@ const Cart = ({ closeCart }) => {
         items: cart.items.map((item) => ({
           item_id: item.id,
 
-          item_name: item.name,
-
+          item_name: item.name || item.FirstP,
           price: item.price,
 
           quantity: item.quantity,
