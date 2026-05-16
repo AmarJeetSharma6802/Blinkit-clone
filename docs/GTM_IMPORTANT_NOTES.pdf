@@ -1,0 +1,701 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+3 0 obj
+<< /Length 3836 >>
+stream
+BT
+/F1 22 Tf
+48.00 793.89 Td
+(GTM Tracking Important Notes) Tj
+-48.00 -793.89 Td
+/F1 10 Tf
+48.00 768.89 Td
+(Project: Blinkit Clone) Tj
+-48.00 -768.89 Td
+/F1 10 Tf
+48.00 753.89 Td
+(GTM Container: GTM-K9DRNHRR) Tj
+-48.00 -753.89 Td
+/F1 15 Tf
+48.00 730.89 Td
+(1. Short Summary) Tj
+-48.00 -730.89 Td
+/F1 10 Tf
+48.00 710.89 Td
+(Website me Google Tag Manager installed hai. Code ecommerce actions ko window.dataLayer me) Tj
+-48.00 -710.89 Td
+/F1 10 Tf
+48.00 695.89 Td
+(push karta hai. GTM me marketer Google Ads / GA4 tags ko in events par fire kara sakta hai.) Tj
+-48.00 -695.89 Td
+/F1 15 Tf
+48.00 672.89 Td
+(2. GTM Script Kahan Add Hai) Tj
+-48.00 -672.89 Td
+/F1 10 Tf
+48.00 652.89 Td
+(GTM script Layout.jsx me nahi hai. GTM script root index.html file me add hai. Layout.jsx) Tj
+-48.00 -652.89 Td
+/F1 10 Tf
+48.00 637.89 Td
+(sirf Header, Outlet, Footer render karta hai.) Tj
+-48.00 -637.89 Td
+/F2 8.5 Tf
+62.00 620.89 Td
+(// index.html) Tj
+-62.00 -620.89 Td
+/F2 8.5 Tf
+62.00 605.89 Td
+(\(function \(w, d, s, l, i\) {) Tj
+-62.00 -605.89 Td
+/F2 8.5 Tf
+62.00 590.89 Td
+(  w[l] = w[l] || [];) Tj
+-62.00 -590.89 Td
+/F2 8.5 Tf
+62.00 575.89 Td
+(  w[l].push\({) Tj
+-62.00 -575.89 Td
+/F2 8.5 Tf
+62.00 560.89 Td
+(    "gtm.start": new Date\(\).getTime\(\),) Tj
+-62.00 -560.89 Td
+/F2 8.5 Tf
+62.00 545.89 Td
+(    event: "gtm.js") Tj
+-62.00 -545.89 Td
+/F2 8.5 Tf
+62.00 530.89 Td
+(  }\);) Tj
+-62.00 -530.89 Td
+/F2 8.5 Tf
+62.00 515.89 Td
+(  var f = d.getElementsByTagName\(s\)[0],) Tj
+-62.00 -515.89 Td
+/F2 8.5 Tf
+62.00 500.89 Td
+(    j = d.createElement\(s\),) Tj
+-62.00 -500.89 Td
+/F2 8.5 Tf
+62.00 485.89 Td
+(    dl = l != "dataLayer" ? "&l=" + l : "";) Tj
+-62.00 -485.89 Td
+/F2 8.5 Tf
+62.00 470.89 Td
+(  j.async = true;) Tj
+-62.00 -470.89 Td
+/F2 8.5 Tf
+62.00 455.89 Td
+(  j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;) Tj
+-62.00 -455.89 Td
+/F2 8.5 Tf
+62.00 440.89 Td
+(  f.parentNode.insertBefore\(j, f\);) Tj
+-62.00 -440.89 Td
+/F2 8.5 Tf
+62.00 425.89 Td
+(}\)\(window, document, "script", "dataLayer", "GTM-K9DRNHRR"\);) Tj
+-62.00 -425.89 Td
+/F1 15 Tf
+48.00 399.89 Td
+(3. Live Tracking Ka Matlab) Tj
+-48.00 -399.89 Td
+/F1 10 Tf
+48.00 379.89 Td
+(Tag Assistant ka Connect button sirf preview/debug mode ke liye hota hai. Real users ko) Tj
+-48.00 -379.89 Td
+/F1 10 Tf
+48.00 364.89 Td
+(connect karne ki zarurat nahi hoti.) Tj
+-48.00 -364.89 Td
+/F1 10 Tf
+48.00 349.89 Td
+(Live tracking tab kaam karegi jab GTM container published ho, Google Ads/GA4 tags configured) Tj
+-48.00 -349.89 Td
+/F1 10 Tf
+48.00 334.89 Td
+(hon, aur triggers correct events par lage hon.) Tj
+-48.00 -334.89 Td
+/F1 15 Tf
+48.00 311.89 Td
+(4. dataLayer Helper Function) Tj
+-48.00 -311.89 Td
+/F2 8.5 Tf
+62.00 289.89 Td
+(// src/lib/gtm.ts) Tj
+-62.00 -289.89 Td
+/F2 8.5 Tf
+62.00 274.89 Td
+(export const pushToDataLayer = \(data: object\) => {) Tj
+-62.00 -274.89 Td
+/F2 8.5 Tf
+62.00 259.89 Td
+(  window.dataLayer = window.dataLayer || [];) Tj
+-62.00 -259.89 Td
+/F2 8.5 Tf
+62.00 244.89 Td
+(  window.dataLayer.push\(data\);) Tj
+-62.00 -244.89 Td
+/F2 8.5 Tf
+62.00 229.89 Td
+(};) Tj
+-62.00 -229.89 Td
+/F1 10 Tf
+48.00 211.89 Td
+(Ye function event object ko GTM dataLayer me bhejta hai.) Tj
+-48.00 -211.89 Td
+/F1 15 Tf
+48.00 188.89 Td
+(5. Ecommerce Events Used) Tj
+-48.00 -188.89 Td
+/F1 10 Tf
+60.00 168.89 Td
+(- add_to_cart: user ADD button click karta hai.) Tj
+-60.00 -168.89 Td
+/F1 10 Tf
+60.00 153.89 Td
+(- view_cart: user cart drawer open karta hai.) Tj
+-60.00 -153.89 Td
+/F1 10 Tf
+60.00 138.89 Td
+(- begin_checkout: user Proceed Item click karta hai.) Tj
+-60.00 -138.89 Td
+/F1 10 Tf
+60.00 123.89 Td
+(- purchase: user Fake Pay Now click karta hai.) Tj
+-60.00 -123.89 Td
+/F1 15 Tf
+48.00 100.89 Td
+(6. add_to_cart Code) Tj
+-48.00 -100.89 Td
+/F2 8.5 Tf
+62.00 78.89 Td
+(pushToDataLayer\({) Tj
+-62.00 -78.89 Td
+/F2 8.5 Tf
+62.00 63.89 Td
+(  event: "add_to_cart",) Tj
+-62.00 -63.89 Td
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+5 0 obj
+<< /Length 3260 >>
+stream
+BT
+/F2 8.5 Tf
+62.00 793.89 Td
+(  ecommerce: {) Tj
+-62.00 -793.89 Td
+/F2 8.5 Tf
+62.00 778.89 Td
+(    currency: "INR",) Tj
+-62.00 -778.89 Td
+/F2 8.5 Tf
+62.00 763.89 Td
+(    value: Number\(item.price\),) Tj
+-62.00 -763.89 Td
+/F2 8.5 Tf
+62.00 748.89 Td
+(    items: [) Tj
+-62.00 -748.89 Td
+/F2 8.5 Tf
+62.00 733.89 Td
+(      {) Tj
+-62.00 -733.89 Td
+/F2 8.5 Tf
+62.00 718.89 Td
+(        item_id: item.id,) Tj
+-62.00 -718.89 Td
+/F2 8.5 Tf
+62.00 703.89 Td
+(        item_name: item.name || item.FirstP,) Tj
+-62.00 -703.89 Td
+/F2 8.5 Tf
+62.00 688.89 Td
+(        price: Number\(item.price\),) Tj
+-62.00 -688.89 Td
+/F2 8.5 Tf
+62.00 673.89 Td
+(        quantity: 1) Tj
+-62.00 -673.89 Td
+/F2 8.5 Tf
+62.00 658.89 Td
+(      }) Tj
+-62.00 -658.89 Td
+/F2 8.5 Tf
+62.00 643.89 Td
+(    ]) Tj
+-62.00 -643.89 Td
+/F2 8.5 Tf
+62.00 628.89 Td
+(  }) Tj
+-62.00 -628.89 Td
+/F2 8.5 Tf
+62.00 613.89 Td
+(}\);) Tj
+-62.00 -613.89 Td
+/F1 15 Tf
+48.00 587.89 Td
+(7. view_cart Code) Tj
+-48.00 -587.89 Td
+/F2 8.5 Tf
+62.00 565.89 Td
+(pushToDataLayer\({) Tj
+-62.00 -565.89 Td
+/F2 8.5 Tf
+62.00 550.89 Td
+(  event: "view_cart",) Tj
+-62.00 -550.89 Td
+/F2 8.5 Tf
+62.00 535.89 Td
+(  ecommerce: {) Tj
+-62.00 -535.89 Td
+/F2 8.5 Tf
+62.00 520.89 Td
+(    currency: "INR",) Tj
+-62.00 -520.89 Td
+/F2 8.5 Tf
+62.00 505.89 Td
+(    value: cart.totalPrice,) Tj
+-62.00 -505.89 Td
+/F2 8.5 Tf
+62.00 490.89 Td
+(    items: cart.items.map\(\(item\) => \({) Tj
+-62.00 -490.89 Td
+/F2 8.5 Tf
+62.00 475.89 Td
+(      item_id: item.id,) Tj
+-62.00 -475.89 Td
+/F2 8.5 Tf
+62.00 460.89 Td
+(      item_name: getItemName\(item\),) Tj
+-62.00 -460.89 Td
+/F2 8.5 Tf
+62.00 445.89 Td
+(      price: Number\(item.price\),) Tj
+-62.00 -445.89 Td
+/F2 8.5 Tf
+62.00 430.89 Td
+(      quantity: item.quantity) Tj
+-62.00 -430.89 Td
+/F2 8.5 Tf
+62.00 415.89 Td
+(    }\)\)) Tj
+-62.00 -415.89 Td
+/F2 8.5 Tf
+62.00 400.89 Td
+(  }) Tj
+-62.00 -400.89 Td
+/F2 8.5 Tf
+62.00 385.89 Td
+(}\);) Tj
+-62.00 -385.89 Td
+/F1 15 Tf
+48.00 359.89 Td
+(8. begin_checkout Code) Tj
+-48.00 -359.89 Td
+/F2 8.5 Tf
+62.00 337.89 Td
+(pushToDataLayer\({) Tj
+-62.00 -337.89 Td
+/F2 8.5 Tf
+62.00 322.89 Td
+(  event: "begin_checkout",) Tj
+-62.00 -322.89 Td
+/F2 8.5 Tf
+62.00 307.89 Td
+(  ecommerce: {) Tj
+-62.00 -307.89 Td
+/F2 8.5 Tf
+62.00 292.89 Td
+(    currency: "INR",) Tj
+-62.00 -292.89 Td
+/F2 8.5 Tf
+62.00 277.89 Td
+(    value: cart.totalPrice,) Tj
+-62.00 -277.89 Td
+/F2 8.5 Tf
+62.00 262.89 Td
+(    items: cart.items.map\(\(item\) => \({) Tj
+-62.00 -262.89 Td
+/F2 8.5 Tf
+62.00 247.89 Td
+(      item_id: item.id,) Tj
+-62.00 -247.89 Td
+/F2 8.5 Tf
+62.00 232.89 Td
+(      item_name: getItemName\(item\),) Tj
+-62.00 -232.89 Td
+/F2 8.5 Tf
+62.00 217.89 Td
+(      price: item.price,) Tj
+-62.00 -217.89 Td
+/F2 8.5 Tf
+62.00 202.89 Td
+(      quantity: item.quantity) Tj
+-62.00 -202.89 Td
+/F2 8.5 Tf
+62.00 187.89 Td
+(    }\)\)) Tj
+-62.00 -187.89 Td
+/F2 8.5 Tf
+62.00 172.89 Td
+(  }) Tj
+-62.00 -172.89 Td
+/F2 8.5 Tf
+62.00 157.89 Td
+(}\);) Tj
+-62.00 -157.89 Td
+/F2 8.5 Tf
+62.00 142.89 Td
+( ) Tj
+-62.00 -142.89 Td
+/F2 8.5 Tf
+62.00 127.89 Td
+(navigate\("/checkout"\);) Tj
+-62.00 -127.89 Td
+/F1 15 Tf
+48.00 101.89 Td
+(9. purchase Code) Tj
+-48.00 -101.89 Td
+/F2 8.5 Tf
+62.00 79.89 Td
+(const handlePayment = \(\) => {) Tj
+-62.00 -79.89 Td
+/F2 8.5 Tf
+62.00 64.89 Td
+(  pushToDataLayer\({) Tj
+-62.00 -64.89 Td
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 3828 >>
+stream
+BT
+/F2 8.5 Tf
+62.00 793.89 Td
+(    event: "purchase",) Tj
+-62.00 -793.89 Td
+/F2 8.5 Tf
+62.00 778.89 Td
+(    ecommerce: {) Tj
+-62.00 -778.89 Td
+/F2 8.5 Tf
+62.00 763.89 Td
+(      transaction_id: "ORDER_" + Date.now\(\),) Tj
+-62.00 -763.89 Td
+/F2 8.5 Tf
+62.00 748.89 Td
+(      currency: "INR",) Tj
+-62.00 -748.89 Td
+/F2 8.5 Tf
+62.00 733.89 Td
+(      value: cart.totalPrice,) Tj
+-62.00 -733.89 Td
+/F2 8.5 Tf
+62.00 718.89 Td
+(      items: cart.items.map\(\(item\) => \({) Tj
+-62.00 -718.89 Td
+/F2 8.5 Tf
+62.00 703.89 Td
+(        item_id: item.id,) Tj
+-62.00 -703.89 Td
+/F2 8.5 Tf
+62.00 688.89 Td
+(        item_name: item.name || item.FirstP || "Unknown Product",) Tj
+-62.00 -688.89 Td
+/F2 8.5 Tf
+62.00 673.89 Td
+(        price: item.price,) Tj
+-62.00 -673.89 Td
+/F2 8.5 Tf
+62.00 658.89 Td
+(        quantity: item.quantity) Tj
+-62.00 -658.89 Td
+/F2 8.5 Tf
+62.00 643.89 Td
+(      }\)\)) Tj
+-62.00 -643.89 Td
+/F2 8.5 Tf
+62.00 628.89 Td
+(    }) Tj
+-62.00 -628.89 Td
+/F2 8.5 Tf
+62.00 613.89 Td
+(  }\);) Tj
+-62.00 -613.89 Td
+/F2 8.5 Tf
+62.00 598.89 Td
+( ) Tj
+-62.00 -598.89 Td
+/F2 8.5 Tf
+62.00 583.89 Td
+(  console.log\("purchase fired"\);) Tj
+-62.00 -583.89 Td
+/F2 8.5 Tf
+62.00 568.89 Td
+(  navigate\("/success"\);) Tj
+-62.00 -568.89 Td
+/F2 8.5 Tf
+62.00 553.89 Td
+(};) Tj
+-62.00 -553.89 Td
+/F1 15 Tf
+48.00 527.89 Td
+(10. Ecommerce Object Meaning) Tj
+-48.00 -527.89 Td
+/F1 10 Tf
+60.00 507.89 Td
+(- event: GTM trigger ke liye event name.) Tj
+-60.00 -507.89 Td
+/F1 10 Tf
+60.00 492.89 Td
+(- currency: currency code, yahan INR.) Tj
+-60.00 -492.89 Td
+/F1 10 Tf
+60.00 477.89 Td
+(- value: product/cart total amount.) Tj
+-60.00 -477.89 Td
+/F1 10 Tf
+60.00 462.89 Td
+(- transaction_id: purchase order id.) Tj
+-60.00 -462.89 Td
+/F1 10 Tf
+60.00 447.89 Td
+(- items: product list array.) Tj
+-60.00 -447.89 Td
+/F1 10 Tf
+60.00 432.89 Td
+(- item_id: product id.) Tj
+-60.00 -432.89 Td
+/F1 10 Tf
+60.00 417.89 Td
+(- item_name: product name.) Tj
+-60.00 -417.89 Td
+/F1 10 Tf
+60.00 402.89 Td
+(- price: product price.) Tj
+-60.00 -402.89 Td
+/F1 10 Tf
+60.00 387.89 Td
+(- quantity: product quantity.) Tj
+-60.00 -387.89 Td
+/F1 15 Tf
+48.00 364.89 Td
+(11. item_name Undefined Fix) Tj
+-48.00 -364.89 Td
+/F1 10 Tf
+48.00 344.89 Td
+(Pehle kuch products ka naam FirstP me tha aur selected product pages ka naam name me tha.) Tj
+-48.00 -344.89 Td
+/F1 10 Tf
+48.00 329.89 Td
+(Isliye item_name undefined aa sakta tha.) Tj
+-48.00 -329.89 Td
+/F2 8.5 Tf
+62.00 312.89 Td
+(const itemName = newItem.name || newItem.FirstP;) Tj
+-62.00 -312.89 Td
+/F2 8.5 Tf
+62.00 297.89 Td
+( ) Tj
+-62.00 -297.89 Td
+/F2 8.5 Tf
+62.00 282.89 Td
+(name: itemName,) Tj
+-62.00 -282.89 Td
+/F2 8.5 Tf
+62.00 267.89 Td
+(FirstP: itemName) Tj
+-62.00 -267.89 Td
+/F1 10 Tf
+48.00 249.89 Td
+(Events me fallback use hua:) Tj
+-48.00 -249.89 Td
+/F2 8.5 Tf
+62.00 232.89 Td
+(item.name || item.FirstP || "Unknown Product") Tj
+-62.00 -232.89 Td
+/F1 10 Tf
+48.00 214.89 Td
+(Note: Agar browser localStorage me old cart item undefined ke saath saved hai, to cart clear) Tj
+-48.00 -214.89 Td
+/F1 10 Tf
+48.00 199.89 Td
+(karke item dobara add karna hoga.) Tj
+-48.00 -199.89 Td
+/F1 15 Tf
+48.00 176.89 Td
+(12. GTM Preview Undefined Fields) Tj
+-48.00 -176.89 Td
+/F1 10 Tf
+48.00 156.89 Td
+(allowlist, blocklist, whitelist, blacklist, tagTypeBlacklist undefined GTM ke internal debug) Tj
+-48.00 -156.89 Td
+/F1 10 Tf
+48.00 141.89 Td
+(fields hain. Ye hamare ecommerce data ka issue nahi hai.) Tj
+-48.00 -141.89 Td
+/F1 10 Tf
+48.00 126.89 Td
+(Important check: ecommerce.items ke andar item_name, price, quantity sahi aa rahe hon.) Tj
+-48.00 -126.89 Td
+/F1 15 Tf
+48.00 103.89 Td
+(13. UTM Add Kiya Hai Ya Nahi) Tj
+-48.00 -103.89 Td
+/F1 10 Tf
+48.00 83.89 Td
+(Nahi. Is project me UTM reader/pusher code add nahi kiya gaya. Humne GTM + ecommerce) Tj
+-48.00 -83.89 Td
+/F1 10 Tf
+48.00 68.89 Td
+(dataLayer tracking add ki hai.) Tj
+-48.00 -68.89 Td
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 2267 >>
+stream
+BT
+/F2 8.5 Tf
+62.00 793.89 Td
+(Example UTM URL:) Tj
+-62.00 -793.89 Td
+/F2 8.5 Tf
+62.00 778.89 Td
+(?utm_source=google&utm_medium=cpc&utm_campaign=sale) Tj
+-62.00 -778.89 Td
+/F1 10 Tf
+48.00 760.89 Td
+(Google Ads ke liye generally gclid auto-tagging + Conversion Linker use hota hai. UTM) Tj
+-48.00 -760.89 Td
+/F1 10 Tf
+48.00 745.89 Td
+(separate reporting need ho to later add kiya ja sakta hai.) Tj
+-48.00 -745.89 Td
+/F1 15 Tf
+48.00 722.89 Td
+(14. GTM Setup For Marketer) Tj
+-48.00 -722.89 Td
+/F1 10 Tf
+60.00 702.89 Td
+(- GTM container GTM-K9DRNHRR open karo.) Tj
+-60.00 -702.89 Td
+/F1 10 Tf
+60.00 687.89 Td
+(- Conversion Linker tag add karo, trigger: All Pages.) Tj
+-60.00 -687.89 Td
+/F1 10 Tf
+60.00 672.89 Td
+(- Google Ads Conversion tag add karo.) Tj
+-60.00 -672.89 Td
+/F1 10 Tf
+60.00 657.89 Td
+(- Purchase trigger: Custom Event purchase.) Tj
+-60.00 -657.89 Td
+/F1 10 Tf
+60.00 642.89 Td
+(- Value variable: ecommerce.value.) Tj
+-60.00 -642.89 Td
+/F1 10 Tf
+60.00 627.89 Td
+(- Currency variable: ecommerce.currency.) Tj
+-60.00 -627.89 Td
+/F1 10 Tf
+60.00 612.89 Td
+(- Transaction ID variable: ecommerce.transaction_id.) Tj
+-60.00 -612.89 Td
+/F1 10 Tf
+60.00 597.89 Td
+(- Preview test karo, phir container publish karo.) Tj
+-60.00 -597.89 Td
+/F1 15 Tf
+48.00 574.89 Td
+(15. GTM vs GA4 vs UTM Difference) Tj
+-48.00 -574.89 Td
+/F1 10 Tf
+48.00 554.89 Td
+(GTM: Google Tag Manager. Tags manage/run karta hai. Example: GTM-K9DRNHRR.) Tj
+-48.00 -554.89 Td
+/F1 10 Tf
+48.00 539.89 Td
+(GA4: Google Analytics 4. Analytics reports banata hai, users/events analyze karta hai.) Tj
+-48.00 -539.89 Td
+/F1 10 Tf
+48.00 524.89 Td
+(Example: add_to_cart, purchase reports.) Tj
+-48.00 -524.89 Td
+/F1 10 Tf
+48.00 509.89 Td
+(UTM: Campaign URL parameters. Source/medium/campaign identify karta hai. Example:) Tj
+-48.00 -509.89 Td
+/F1 10 Tf
+48.00 494.89 Td
+(utm_source=google.) Tj
+-48.00 -494.89 Td
+/F1 15 Tf
+48.00 471.89 Td
+(16. Final Notes) Tj
+-48.00 -471.89 Td
+/F1 10 Tf
+48.00 451.89 Td
+(Code side complete hai for ecommerce dataLayer events. Live reporting ke liye GTM side) Tj
+-48.00 -451.89 Td
+/F1 10 Tf
+48.00 436.89 Td
+(tags/triggers publish karne honge. UTM currently add nahi hai; ye future optional) Tj
+-48.00 -436.89 Td
+/F1 10 Tf
+48.00 421.89 Td
+(requirement hai.) Tj
+-48.00 -421.89 Td
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R] /Count 4 >>
+endobj
+12 0 obj
+<< /Type /Catalog /Pages 11 0 R >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000147 00000 n 
+0000004035 00000 n 
+0000004178 00000 n 
+0000007490 00000 n 
+0000007633 00000 n 
+0000011513 00000 n 
+0000011656 00000 n 
+0000013975 00000 n 
+0000014119 00000 n 
+0000014196 00000 n 
+trailer
+<< /Size 13 /Root 12 0 R >>
+startxref
+14247
+%%EOF
