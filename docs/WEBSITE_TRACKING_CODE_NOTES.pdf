@@ -1,0 +1,913 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+3 0 obj
+<< /Length 4055 >>
+stream
+BT
+/F1 23 Tf
+42.00 799.89 Td
+(Website Tracking Code Notes) Tj
+-42.00 -799.89 Td
+/F1 10.5 Tf
+42.00 763.89 Td
+(Scope: Project code explanation for developer and performance marketer. GTM container ID is) Tj
+-42.00 -763.89 Td
+/F1 10.5 Tf
+42.00 749.39 Td
+(intentionally not included.) Tj
+-42.00 -749.39 Td
+/F1 15.5 Tf
+42.00 724.89 Td
+(1. Layout.jsx Role) Tj
+-42.00 -724.89 Td
+/F1 10.5 Tf
+42.00 703.89 Td
+(Layout.jsx tracking code load nahi karta. Is file ka kaam common page structure render) Tj
+-42.00 -703.89 Td
+/F1 10.5 Tf
+42.00 689.39 Td
+(karna hai.) Tj
+-42.00 -689.39 Td
+/F2 8.3 Tf
+54.00 669.89 Td
+(function Layout\(\) {) Tj
+-54.00 -669.89 Td
+/F2 8.3 Tf
+54.00 657.89 Td
+(  return \() Tj
+-54.00 -657.89 Td
+/F2 8.3 Tf
+54.00 645.89 Td
+(    <div>) Tj
+-54.00 -645.89 Td
+/F2 8.3 Tf
+54.00 633.89 Td
+(      <Header />) Tj
+-54.00 -633.89 Td
+/F2 8.3 Tf
+54.00 621.89 Td
+(      <Outlet />) Tj
+-54.00 -621.89 Td
+/F2 8.3 Tf
+54.00 609.89 Td
+(      <Footer />) Tj
+-54.00 -609.89 Td
+/F2 8.3 Tf
+54.00 597.89 Td
+(    </div>) Tj
+-54.00 -597.89 Td
+/F2 8.3 Tf
+54.00 585.89 Td
+(  \);) Tj
+-54.00 -585.89 Td
+/F2 8.3 Tf
+54.00 573.89 Td
+(}) Tj
+-54.00 -573.89 Td
+/F1 10.5 Tf
+42.00 555.89 Td
+(Header har page par visible hai. Outlet ke andar current route ka page render hota hai.) Tj
+-42.00 -555.89 Td
+/F1 10.5 Tf
+42.00 541.39 Td
+(Footer har page ke bottom par visible hai.) Tj
+-42.00 -541.39 Td
+/F1 15.5 Tf
+42.00 516.89 Td
+(2. App Routes) Tj
+-42.00 -516.89 Td
+/F1 10.5 Tf
+42.00 495.89 Td
+(App.jsx me React Router routes define hain. Checkout aur Success payment flow ke liye use) Tj
+-42.00 -495.89 Td
+/F1 10.5 Tf
+42.00 481.39 Td
+(hote hain.) Tj
+-42.00 -481.39 Td
+/F2 8.3 Tf
+54.00 461.89 Td
+(<Route path="/" element={<Layout />}>) Tj
+-54.00 -461.89 Td
+/F2 8.3 Tf
+54.00 449.89 Td
+(  <Route index element={<Home />} />) Tj
+-54.00 -449.89 Td
+/F2 8.3 Tf
+54.00 437.89 Td
+(  <Route path="checkout" element={<Checkout />} />) Tj
+-54.00 -437.89 Td
+/F2 8.3 Tf
+54.00 425.89 Td
+(  <Route path="success" element={<Success />} />) Tj
+-54.00 -425.89 Td
+/F2 8.3 Tf
+54.00 413.89 Td
+(</Route>) Tj
+-54.00 -413.89 Td
+/F1 10.5 Tf
+42.00 395.89 Td
+(User cart se Proceed Item click karta hai to /checkout par jata hai. Fake Pay Now click) Tj
+-42.00 -395.89 Td
+/F1 10.5 Tf
+42.00 381.39 Td
+(hone par /success par navigate hota hai.) Tj
+-42.00 -381.39 Td
+/F1 15.5 Tf
+42.00 356.89 Td
+(3. GTM/dataLayer Helper Function) Tj
+-42.00 -356.89 Td
+/F1 10.5 Tf
+42.00 335.89 Td
+(Project me ek common helper banaya gaya hai jo event object ko browser ke dataLayer me push) Tj
+-42.00 -335.89 Td
+/F1 10.5 Tf
+42.00 321.39 Td
+(karta hai.) Tj
+-42.00 -321.39 Td
+/F2 8.3 Tf
+54.00 301.89 Td
+(export const pushToDataLayer = \(data: object\) => {) Tj
+-54.00 -301.89 Td
+/F2 8.3 Tf
+54.00 289.89 Td
+(  window.dataLayer = window.dataLayer || [];) Tj
+-54.00 -289.89 Td
+/F2 8.3 Tf
+54.00 277.89 Td
+(  window.dataLayer.push\(data\);) Tj
+-54.00 -277.89 Td
+/F2 8.3 Tf
+54.00 265.89 Td
+(};) Tj
+-54.00 -265.89 Td
+/F1 10.5 Tf
+42.00 247.89 Td
+(Is helper ko har tracking action me import karke use kiya gaya hai. Isse code repeat kam) Tj
+-42.00 -247.89 Td
+/F1 10.5 Tf
+42.00 233.39 Td
+(hota hai aur event push ka standard way milta hai.) Tj
+-42.00 -233.39 Td
+/F1 15.5 Tf
+42.00 208.89 Td
+(4. Redux Toolkit Cart Flow) Tj
+-42.00 -208.89 Td
+/F1 10.5 Tf
+42.00 187.89 Td
+(Cart state Redux Toolkit slice me maintain hoti hai. Cart localStorage se load hota hai aur) Tj
+-42.00 -187.89 Td
+/F1 10.5 Tf
+42.00 173.39 Td
+(update hone par localStorage me save hota hai.) Tj
+-42.00 -173.39 Td
+/F2 8.3 Tf
+54.00 153.89 Td
+(const storedCart = JSON.parse\(localStorage.getItem\("cart"\)\) || {) Tj
+-54.00 -153.89 Td
+/F2 8.3 Tf
+54.00 141.89 Td
+(  items: [],) Tj
+-54.00 -141.89 Td
+/F2 8.3 Tf
+54.00 129.89 Td
+(  totalQuantity: 0,) Tj
+-54.00 -129.89 Td
+/F2 8.3 Tf
+54.00 117.89 Td
+(  totalPrice: 0,) Tj
+-54.00 -117.89 Td
+/F2 8.3 Tf
+54.00 105.89 Td
+(};) Tj
+-54.00 -105.89 Td
+/F1 10.5 Tf
+42.00 87.89 Td
+(addItem reducer cart item add/increase karta hai, totalQuantity aur totalPrice update karta) Tj
+-42.00 -87.89 Td
+/F1 10.5 Tf
+42.00 73.39 Td
+(hai.) Tj
+-42.00 -73.39 Td
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+5 0 obj
+<< /Length 4507 >>
+stream
+BT
+/F2 8.3 Tf
+54.00 799.89 Td
+(addItem\(state, action\) {) Tj
+-54.00 -799.89 Td
+/F2 8.3 Tf
+54.00 787.89 Td
+(  const newItem = action.payload;) Tj
+-54.00 -787.89 Td
+/F2 8.3 Tf
+54.00 775.89 Td
+(  const existingItem = state.items.find\(\(item\) => item.id === newItem.id\);) Tj
+-54.00 -775.89 Td
+/F2 8.3 Tf
+54.00 763.89 Td
+(  const itemName = newItem.name || newItem.FirstP;) Tj
+-54.00 -763.89 Td
+/F2 8.3 Tf
+54.00 751.89 Td
+( ) Tj
+-54.00 -751.89 Td
+/F2 8.3 Tf
+54.00 739.89 Td
+(  state.totalQuantity++;) Tj
+-54.00 -739.89 Td
+/F2 8.3 Tf
+54.00 727.89 Td
+(  const itemPrice = parseFloat\(newItem.price\);) Tj
+-54.00 -727.89 Td
+/F2 8.3 Tf
+54.00 715.89 Td
+( ) Tj
+-54.00 -715.89 Td
+/F2 8.3 Tf
+54.00 703.89 Td
+(  if \(!existingItem\) {) Tj
+-54.00 -703.89 Td
+/F2 8.3 Tf
+54.00 691.89 Td
+(    state.items.push\({) Tj
+-54.00 -691.89 Td
+/F2 8.3 Tf
+54.00 679.89 Td
+(      id: newItem.id,) Tj
+-54.00 -679.89 Td
+/F2 8.3 Tf
+54.00 667.89 Td
+(      name: itemName,) Tj
+-54.00 -667.89 Td
+/F2 8.3 Tf
+54.00 655.89 Td
+(      FirstP: itemName,) Tj
+-54.00 -655.89 Td
+/F2 8.3 Tf
+54.00 643.89 Td
+(      price: itemPrice,) Tj
+-54.00 -643.89 Td
+/F2 8.3 Tf
+54.00 631.89 Td
+(      quantity: 1,) Tj
+-54.00 -631.89 Td
+/F2 8.3 Tf
+54.00 619.89 Td
+(      total: itemPrice,) Tj
+-54.00 -619.89 Td
+/F2 8.3 Tf
+54.00 607.89 Td
+(      watch: newItem.watch,) Tj
+-54.00 -607.89 Td
+/F2 8.3 Tf
+54.00 595.89 Td
+(      img: newItem.img,) Tj
+-54.00 -595.89 Td
+/F2 8.3 Tf
+54.00 583.89 Td
+(      secondP: newItem.secondP) Tj
+-54.00 -583.89 Td
+/F2 8.3 Tf
+54.00 571.89 Td
+(    }\);) Tj
+-54.00 -571.89 Td
+/F2 8.3 Tf
+54.00 559.89 Td
+(    state.totalPrice += itemPrice;) Tj
+-54.00 -559.89 Td
+/F2 8.3 Tf
+54.00 547.89 Td
+(  } else {) Tj
+-54.00 -547.89 Td
+/F2 8.3 Tf
+54.00 535.89 Td
+(    existingItem.name = existingItem.name || itemName;) Tj
+-54.00 -535.89 Td
+/F2 8.3 Tf
+54.00 523.89 Td
+(    existingItem.FirstP = existingItem.FirstP || itemName;) Tj
+-54.00 -523.89 Td
+/F2 8.3 Tf
+54.00 511.89 Td
+(    existingItem.quantity++;) Tj
+-54.00 -511.89 Td
+/F2 8.3 Tf
+54.00 499.89 Td
+(    existingItem.total += itemPrice;) Tj
+-54.00 -499.89 Td
+/F2 8.3 Tf
+54.00 487.89 Td
+(    state.totalPrice += itemPrice;) Tj
+-54.00 -487.89 Td
+/F2 8.3 Tf
+54.00 475.89 Td
+(  }) Tj
+-54.00 -475.89 Td
+/F2 8.3 Tf
+54.00 463.89 Td
+( ) Tj
+-54.00 -463.89 Td
+/F2 8.3 Tf
+54.00 451.89 Td
+(  saveToLocalStorage\(state\);) Tj
+-54.00 -451.89 Td
+/F2 8.3 Tf
+54.00 439.89 Td
+(}) Tj
+-54.00 -439.89 Td
+/F1 15.5 Tf
+42.00 413.89 Td
+(5. item_name Undefined Fix) Tj
+-42.00 -413.89 Td
+/F1 10.5 Tf
+42.00 392.89 Td
+(Products me name kabhi name field me tha aur kabhi FirstP field me. Isliye item_name) Tj
+-42.00 -392.89 Td
+/F1 10.5 Tf
+42.00 378.39 Td
+(undefined aa sakta tha. Fix me dono fields ka fallback use hua.) Tj
+-42.00 -378.39 Td
+/F2 8.3 Tf
+54.00 358.89 Td
+(const itemName = newItem.name || newItem.FirstP;) Tj
+-54.00 -358.89 Td
+/F1 10.5 Tf
+42.00 340.89 Td
+(Events me fallback pattern use hua:) Tj
+-42.00 -340.89 Td
+/F2 8.3 Tf
+54.00 321.39 Td
+(item.name || item.FirstP || "Unknown Product") Tj
+-54.00 -321.39 Td
+/F1 10.5 Tf
+42.00 303.39 Td
+(Agar browser localStorage me old item pehle se undefined ke saath saved hai, to test ke) Tj
+-42.00 -303.39 Td
+/F1 10.5 Tf
+42.00 288.89 Td
+(liye cart clear karke item dobara add karna chahiye.) Tj
+-42.00 -288.89 Td
+/F1 15.5 Tf
+42.00 264.39 Td
+(6. add_to_cart Event) Tj
+-42.00 -264.39 Td
+/F1 10.5 Tf
+42.00 243.39 Td
+(Product ADD button click hone par Redux dispatch ke baad add_to_cart event dataLayer me) Tj
+-42.00 -243.39 Td
+/F1 10.5 Tf
+42.00 228.89 Td
+(push hota hai.) Tj
+-42.00 -228.89 Td
+/F2 8.3 Tf
+54.00 209.39 Td
+(const handleAddToCart = \(item\) => {) Tj
+-54.00 -209.39 Td
+/F2 8.3 Tf
+54.00 197.39 Td
+(  dispatch\(addItem\(item\)\);) Tj
+-54.00 -197.39 Td
+/F2 8.3 Tf
+54.00 185.39 Td
+( ) Tj
+-54.00 -185.39 Td
+/F2 8.3 Tf
+54.00 173.39 Td
+(  pushToDataLayer\({) Tj
+-54.00 -173.39 Td
+/F2 8.3 Tf
+54.00 161.39 Td
+(    event: "add_to_cart",) Tj
+-54.00 -161.39 Td
+/F2 8.3 Tf
+54.00 149.39 Td
+(    ecommerce: {) Tj
+-54.00 -149.39 Td
+/F2 8.3 Tf
+54.00 137.39 Td
+(      currency: "INR",) Tj
+-54.00 -137.39 Td
+/F2 8.3 Tf
+54.00 125.39 Td
+(      value: Number\(item.price\),) Tj
+-54.00 -125.39 Td
+/F2 8.3 Tf
+54.00 113.39 Td
+(      items: [) Tj
+-54.00 -113.39 Td
+/F2 8.3 Tf
+54.00 101.39 Td
+(        {) Tj
+-54.00 -101.39 Td
+/F2 8.3 Tf
+54.00 89.39 Td
+(          item_id: item.id,) Tj
+-54.00 -89.39 Td
+/F2 8.3 Tf
+54.00 77.39 Td
+(          item_name: item.name || item.FirstP,) Tj
+-54.00 -77.39 Td
+/F2 8.3 Tf
+54.00 65.39 Td
+(          price: Number\(item.price\),) Tj
+-54.00 -65.39 Td
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 4215 >>
+stream
+BT
+/F2 8.3 Tf
+54.00 799.89 Td
+(          quantity: 1,) Tj
+-54.00 -799.89 Td
+/F2 8.3 Tf
+54.00 787.89 Td
+(        },) Tj
+-54.00 -787.89 Td
+/F2 8.3 Tf
+54.00 775.89 Td
+(      ],) Tj
+-54.00 -775.89 Td
+/F2 8.3 Tf
+54.00 763.89 Td
+(    },) Tj
+-54.00 -763.89 Td
+/F2 8.3 Tf
+54.00 751.89 Td
+(  }\);) Tj
+-54.00 -751.89 Td
+/F2 8.3 Tf
+54.00 739.89 Td
+(};) Tj
+-54.00 -739.89 Td
+/F1 15.5 Tf
+42.00 713.89 Td
+(7. view_cart Event) Tj
+-42.00 -713.89 Td
+/F1 10.5 Tf
+42.00 692.89 Td
+(Cart drawer open hone par view_cart event push hota hai. Ye cart state se items map karta) Tj
+-42.00 -692.89 Td
+/F1 10.5 Tf
+42.00 678.39 Td
+(hai.) Tj
+-42.00 -678.39 Td
+/F2 8.3 Tf
+54.00 658.89 Td
+(pushToDataLayer\({) Tj
+-54.00 -658.89 Td
+/F2 8.3 Tf
+54.00 646.89 Td
+(  event: "view_cart",) Tj
+-54.00 -646.89 Td
+/F2 8.3 Tf
+54.00 634.89 Td
+(  ecommerce: {) Tj
+-54.00 -634.89 Td
+/F2 8.3 Tf
+54.00 622.89 Td
+(    currency: "INR",) Tj
+-54.00 -622.89 Td
+/F2 8.3 Tf
+54.00 610.89 Td
+(    value: cart.totalPrice,) Tj
+-54.00 -610.89 Td
+/F2 8.3 Tf
+54.00 598.89 Td
+(    items: cart.items.map\(\(item\) => \({) Tj
+-54.00 -598.89 Td
+/F2 8.3 Tf
+54.00 586.89 Td
+(      item_id: item.id,) Tj
+-54.00 -586.89 Td
+/F2 8.3 Tf
+54.00 574.89 Td
+(      item_name: getItemName\(item\),) Tj
+-54.00 -574.89 Td
+/F2 8.3 Tf
+54.00 562.89 Td
+(      price: Number\(item.price\),) Tj
+-54.00 -562.89 Td
+/F2 8.3 Tf
+54.00 550.89 Td
+(      quantity: item.quantity,) Tj
+-54.00 -550.89 Td
+/F2 8.3 Tf
+54.00 538.89 Td
+(    }\)\),) Tj
+-54.00 -538.89 Td
+/F2 8.3 Tf
+54.00 526.89 Td
+(  },) Tj
+-54.00 -526.89 Td
+/F2 8.3 Tf
+54.00 514.89 Td
+(}\);) Tj
+-54.00 -514.89 Td
+/F1 10.5 Tf
+42.00 496.89 Td
+(getItemName helper saved item name, FirstP, item_name ya previous dataLayer item se name) Tj
+-42.00 -496.89 Td
+/F1 10.5 Tf
+42.00 482.39 Td
+(resolve karta hai. Last fallback Item ID hai, so undefined avoid hota hai.) Tj
+-42.00 -482.39 Td
+/F1 15.5 Tf
+42.00 457.89 Td
+(8. begin_checkout Event) Tj
+-42.00 -457.89 Td
+/F1 10.5 Tf
+42.00 436.89 Td
+(Cart page me Proceed Item button click hone par begin_checkout event push hota hai, phir) Tj
+-42.00 -436.89 Td
+/F1 10.5 Tf
+42.00 422.39 Td
+(user /checkout route par navigate hota hai.) Tj
+-42.00 -422.39 Td
+/F2 8.3 Tf
+54.00 402.89 Td
+(const handleCheckout = \(\) => {) Tj
+-54.00 -402.89 Td
+/F2 8.3 Tf
+54.00 390.89 Td
+(  pushToDataLayer\({) Tj
+-54.00 -390.89 Td
+/F2 8.3 Tf
+54.00 378.89 Td
+(    event: "begin_checkout",) Tj
+-54.00 -378.89 Td
+/F2 8.3 Tf
+54.00 366.89 Td
+(    ecommerce: {) Tj
+-54.00 -366.89 Td
+/F2 8.3 Tf
+54.00 354.89 Td
+(      currency: "INR",) Tj
+-54.00 -354.89 Td
+/F2 8.3 Tf
+54.00 342.89 Td
+(      value: cart.totalPrice,) Tj
+-54.00 -342.89 Td
+/F2 8.3 Tf
+54.00 330.89 Td
+(      items: cart.items.map\(\(item\) => \({) Tj
+-54.00 -330.89 Td
+/F2 8.3 Tf
+54.00 318.89 Td
+(        item_id: item.id,) Tj
+-54.00 -318.89 Td
+/F2 8.3 Tf
+54.00 306.89 Td
+(        item_name: getItemName\(item\),) Tj
+-54.00 -306.89 Td
+/F2 8.3 Tf
+54.00 294.89 Td
+(        price: item.price,) Tj
+-54.00 -294.89 Td
+/F2 8.3 Tf
+54.00 282.89 Td
+(        quantity: item.quantity,) Tj
+-54.00 -282.89 Td
+/F2 8.3 Tf
+54.00 270.89 Td
+(      }\)\),) Tj
+-54.00 -270.89 Td
+/F2 8.3 Tf
+54.00 258.89 Td
+(    },) Tj
+-54.00 -258.89 Td
+/F2 8.3 Tf
+54.00 246.89 Td
+(  }\);) Tj
+-54.00 -246.89 Td
+/F2 8.3 Tf
+54.00 234.89 Td
+( ) Tj
+-54.00 -234.89 Td
+/F2 8.3 Tf
+54.00 222.89 Td
+(  navigate\("/checkout"\);) Tj
+-54.00 -222.89 Td
+/F2 8.3 Tf
+54.00 210.89 Td
+(};) Tj
+-54.00 -210.89 Td
+/F1 15.5 Tf
+42.00 184.89 Td
+(9. purchase Event) Tj
+-42.00 -184.89 Td
+/F1 10.5 Tf
+42.00 163.89 Td
+(Checkout page me Fake Pay Now button click hone par purchase event push hota hai, phir user) Tj
+-42.00 -163.89 Td
+/F1 10.5 Tf
+42.00 149.39 Td
+(/success route par jata hai.) Tj
+-42.00 -149.39 Td
+/F2 8.3 Tf
+54.00 129.89 Td
+(const handlePayment = \(\) => {) Tj
+-54.00 -129.89 Td
+/F2 8.3 Tf
+54.00 117.89 Td
+(  pushToDataLayer\({) Tj
+-54.00 -117.89 Td
+/F2 8.3 Tf
+54.00 105.89 Td
+(    event: "purchase",) Tj
+-54.00 -105.89 Td
+/F2 8.3 Tf
+54.00 93.89 Td
+(    ecommerce: {) Tj
+-54.00 -93.89 Td
+/F2 8.3 Tf
+54.00 81.89 Td
+(      transaction_id: "ORDER_" + Date.now\(\),) Tj
+-54.00 -81.89 Td
+/F2 8.3 Tf
+54.00 69.89 Td
+(      currency: "INR",) Tj
+-54.00 -69.89 Td
+/F2 8.3 Tf
+54.00 57.89 Td
+(      value: cart.totalPrice,) Tj
+-54.00 -57.89 Td
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 4237 >>
+stream
+BT
+/F2 8.3 Tf
+54.00 799.89 Td
+(      items: cart.items.map\(\(item\) => \({) Tj
+-54.00 -799.89 Td
+/F2 8.3 Tf
+54.00 787.89 Td
+(        item_id: item.id,) Tj
+-54.00 -787.89 Td
+/F2 8.3 Tf
+54.00 775.89 Td
+(        item_name: item.name || item.FirstP || "Unknown Product",) Tj
+-54.00 -775.89 Td
+/F2 8.3 Tf
+54.00 763.89 Td
+(        price: item.price,) Tj
+-54.00 -763.89 Td
+/F2 8.3 Tf
+54.00 751.89 Td
+(        quantity: item.quantity,) Tj
+-54.00 -751.89 Td
+/F2 8.3 Tf
+54.00 739.89 Td
+(      }\)\),) Tj
+-54.00 -739.89 Td
+/F2 8.3 Tf
+54.00 727.89 Td
+(    },) Tj
+-54.00 -727.89 Td
+/F2 8.3 Tf
+54.00 715.89 Td
+(  }\);) Tj
+-54.00 -715.89 Td
+/F2 8.3 Tf
+54.00 703.89 Td
+( ) Tj
+-54.00 -703.89 Td
+/F2 8.3 Tf
+54.00 691.89 Td
+(  console.log\("purchase fired"\);) Tj
+-54.00 -691.89 Td
+/F2 8.3 Tf
+54.00 679.89 Td
+(  navigate\("/success"\);) Tj
+-54.00 -679.89 Td
+/F2 8.3 Tf
+54.00 667.89 Td
+(};) Tj
+-54.00 -667.89 Td
+/F1 15.5 Tf
+42.00 641.89 Td
+(10. Success Page) Tj
+-42.00 -641.89 Td
+/F1 10.5 Tf
+42.00 620.89 Td
+(Purchase event ke baad Success component render hota hai. Ye confirmation UI hai.) Tj
+-42.00 -620.89 Td
+/F2 8.3 Tf
+54.00 601.39 Td
+(const Success = \(\) => {) Tj
+-54.00 -601.39 Td
+/F2 8.3 Tf
+54.00 589.39 Td
+(  return \() Tj
+-54.00 -589.39 Td
+/F2 8.3 Tf
+54.00 577.39 Td
+(    <div style={{ padding: "40px" }}>) Tj
+-54.00 -577.39 Td
+/F2 8.3 Tf
+54.00 565.39 Td
+(      <h1>Payment Successful</h1>) Tj
+-54.00 -565.39 Td
+/F2 8.3 Tf
+54.00 553.39 Td
+(      <p>Purchase Event Sent</p>) Tj
+-54.00 -553.39 Td
+/F2 8.3 Tf
+54.00 541.39 Td
+(    </div>) Tj
+-54.00 -541.39 Td
+/F2 8.3 Tf
+54.00 529.39 Td
+(  \);) Tj
+-54.00 -529.39 Td
+/F2 8.3 Tf
+54.00 517.39 Td
+(};) Tj
+-54.00 -517.39 Td
+/F1 15.5 Tf
+42.00 491.39 Td
+(11. Ecommerce Object Meaning) Tj
+-42.00 -491.39 Td
+/F1 10.5 Tf
+54.00 470.39 Td
+(- event: event name jise GTM trigger sunta hai, e.g. add_to_cart or purchase.) Tj
+-54.00 -470.39 Td
+/F1 10.5 Tf
+54.00 455.89 Td
+(- ecommerce.currency: currency code, yahan INR.) Tj
+-54.00 -455.89 Td
+/F1 10.5 Tf
+54.00 441.39 Td
+(- ecommerce.value: product/cart total value.) Tj
+-54.00 -441.39 Td
+/F1 10.5 Tf
+54.00 426.89 Td
+(- ecommerce.transaction_id: purchase order id.) Tj
+-54.00 -426.89 Td
+/F1 10.5 Tf
+54.00 412.39 Td
+(- ecommerce.items: product list array.) Tj
+-54.00 -412.39 Td
+/F1 10.5 Tf
+54.00 397.89 Td
+(- item_id: product id.) Tj
+-54.00 -397.89 Td
+/F1 10.5 Tf
+54.00 383.39 Td
+(- item_name: product name.) Tj
+-54.00 -383.39 Td
+/F1 10.5 Tf
+54.00 368.89 Td
+(- price: product price.) Tj
+-54.00 -368.89 Td
+/F1 10.5 Tf
+54.00 354.39 Td
+(- quantity: product quantity.) Tj
+-54.00 -354.39 Td
+/F1 15.5 Tf
+42.00 331.89 Td
+(12. Live Tracking Explanation) Tj
+-42.00 -331.89 Td
+/F1 10.5 Tf
+42.00 310.89 Td
+(Tag Assistant Connect sirf preview/debug ke liye hota hai. Real users ko connect karne ki) Tj
+-42.00 -310.89 Td
+/F1 10.5 Tf
+42.00 296.39 Td
+(zarurat nahi hoti.) Tj
+-42.00 -296.39 Td
+/F1 10.5 Tf
+42.00 279.89 Td
+(Live tracking flow: website loads script, user action hota hai, React handler) Tj
+-42.00 -279.89 Td
+/F1 10.5 Tf
+42.00 265.39 Td
+(pushToDataLayer call karta hai, GTM published trigger event pakadta hai, phir Ads/Analytics) Tj
+-42.00 -265.39 Td
+/F1 10.5 Tf
+42.00 250.89 Td
+(tag fire hota hai.) Tj
+-42.00 -250.89 Td
+/F1 15.5 Tf
+42.00 226.39 Td
+(13. UTM Status) Tj
+-42.00 -226.39 Td
+/F1 10.5 Tf
+42.00 205.39 Td
+(Is project me UTM reader/pusher code add nahi kiya gaya. Current implementation ecommerce) Tj
+-42.00 -205.39 Td
+/F1 10.5 Tf
+42.00 190.89 Td
+(dataLayer events ke liye hai.) Tj
+-42.00 -190.89 Td
+/F2 8.3 Tf
+54.00 171.39 Td
+(Example UTM URL:) Tj
+-54.00 -171.39 Td
+/F2 8.3 Tf
+54.00 159.39 Td
+(?utm_source=google&utm_medium=cpc&utm_campaign=sale) Tj
+-54.00 -159.39 Td
+/F1 10.5 Tf
+42.00 141.39 Td
+(UTM tab add karte hain jab campaign parameters ko custom reporting ke liye code se read) Tj
+-42.00 -141.39 Td
+/F1 10.5 Tf
+42.00 126.89 Td
+(karke dataLayer me push karna ho.) Tj
+-42.00 -126.89 Td
+/F1 15.5 Tf
+42.00 102.39 Td
+(14. GTM vs GA4 vs UTM Comparison) Tj
+-42.00 -102.39 Td
+/F1 10.5 Tf
+42.00 81.39 Td
+(GTM: Tag manager. Website par tags fire/manage karta hai. Iska kaam tags deploy karna hai.) Tj
+-42.00 -81.39 Td
+/F1 10.5 Tf
+42.00 64.89 Td
+(GA4: Analytics platform. Users, sessions, ecommerce events aur reports analyze karta hai.) Tj
+-42.00 -64.89 Td
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 488 >>
+stream
+BT
+/F1 10.5 Tf
+42.00 799.89 Td
+(UTM: URL campaign parameters. Source, medium, campaign identify karte hain.) Tj
+-42.00 -799.89 Td
+/F1 15.5 Tf
+42.00 775.39 Td
+(15. Final Developer Note) Tj
+-42.00 -775.39 Td
+/F1 10.5 Tf
+42.00 754.39 Td
+(Code side me Redux Toolkit cart state, React Router navigation, aur dataLayer event helper) Tj
+-42.00 -754.39 Td
+/F1 10.5 Tf
+42.00 739.89 Td
+(connected hain. Marketing tags ko GTM UI me configure/publish karna separate step hai.) Tj
+-42.00 -739.89 Td
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R] /Count 5 >>
+endobj
+14 0 obj
+<< /Type /Catalog /Pages 13 0 R >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000147 00000 n 
+0000004254 00000 n 
+0000004397 00000 n 
+0000008956 00000 n 
+0000009099 00000 n 
+0000013366 00000 n 
+0000013509 00000 n 
+0000017798 00000 n 
+0000017942 00000 n 
+0000018482 00000 n 
+0000018627 00000 n 
+0000018711 00000 n 
+trailer
+<< /Size 15 /Root 14 0 R >>
+startxref
+18762
+%%EOF
