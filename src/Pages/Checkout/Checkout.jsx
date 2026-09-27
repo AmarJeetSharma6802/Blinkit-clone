@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { pushToDataLayer, buildUserData } from "../../lib/gtm";
 import { saveAddress } from "../Reducer/addressSlice";
+import { clearCart } from "../Reducer/cartSlice";
 import AddressForm from "../Address/AddressForm";
 import AddressCard from "../Address/AddressCard";
 import "../Address/address.css";
@@ -72,6 +73,9 @@ const Checkout = () => {
     console.log("purchase fired");
 
     navigate("/success");
+
+    // Payment ke baad cart khali karo (localStorage bhi clear hota hai)
+    dispatch(clearCart());
   };
 
   if (cart.items.length === 0) {

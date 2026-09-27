@@ -171,15 +171,20 @@ const [cartActive,setCartActive]= useState(false)
           <p>OR</p>
          </div>
          <div className="input">
-         <input type="text" placeholder='search'  id='input'/>
+         <button
+          type="button"
+          id='input'
+          onClick={addressBtn}
+          title={savedAddress ? "Change delivery address" : "Add delivery address"}
+          style={{ cursor: 'pointer', background: 'white', textAlign: 'left', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+         >
+          <i className="fa-solid fa-location-dot"></i>{' '}
+          {savedAddress ? `Change: ${savedAddress.house}, ${savedAddress.city}` : "Add delivery address"}
+         </button>
          </div>
          <div className="catch-location">
           <p className='crosshairs'><i class="fa-solid fa-location-crosshairs"></i></p>
           <p className='use'>Use current location</p>
-         </div>
-         <div className="catch-location" onClick={addressBtn}>
-          <p className='crosshairs'><i className="fa-solid fa-location-dot"></i></p>
-          <p className='use'>{savedAddress ? "Change saved address" : "Add delivery address"}</p>
          </div>
           
         </div>
