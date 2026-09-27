@@ -114,6 +114,7 @@ const Cart = ({ closeCart }) => {
 
     console.log("begin_checkout fired");
 
+    closeCart();
     navigate("/checkout");
   };
   return (

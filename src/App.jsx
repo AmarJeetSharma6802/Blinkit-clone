@@ -15,6 +15,7 @@ import SlectedMilk from './Pages/SelctedProduct/SlectedMilk';
 import SelctedVegitable from './Pages/SelctedProduct/SelectedVegitable';
 import Checkout from './Pages/Checkout/Checkout';
 import Success from './Pages/Success/Success';
+import Address from './Pages/Address/Address';
 function App() {
 
 
@@ -35,7 +36,8 @@ function App() {
         <Route path="/slectedMilk/:id/:FirstP" element={<SlectedMilk/>}/> 
         <Route path="/selectedVegitable/:id/:FirstP" element={<SelctedVegitable/>}/> 
         <Route path="checkout" element={<Checkout/>}/> 
-        <Route path="success" element={<Success/>}/> 
+        <Route path="success" element={<Success/>}/>
+        <Route path="address" element={<Address/>}/>
 
       </Route>
     )

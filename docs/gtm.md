@@ -425,3 +425,23 @@ Developer side flow:
 7. `Success.jsx` fake payment success page hai.
 8. `App.jsx` me `/checkout` aur `/success` routes configured hain.
 
+
+## Address / Shipping Info Tracking
+
+Checkout page par user ka naam, phone aur address liya jata hai. Address `localStorage` (`deliveryAddress` key) me save hota hai, isliye har order par dobara bharna nahi padta. Navbar ke "My Address" button (mobile par profile icon / location popup) se `/address` page par jaakar change ya delete kar sakte hain.
+
+Naye events:
+
+- `add_shipping_info` — Checkout par "Save & Proceed" / "Deliver Here" click par (GA4 standard ecommerce event)
+- `save_address` / `update_address` / `delete_address` — `/address` page se
+
+`add_shipping_info`, `purchase`, `save_address` aur `update_address` ke saath `user_data` bhi push hota hai (Google Ads Enhanced Conversions format):
+
+```js
+user_data: {
+  phone_number: "+919876543210",
+  address: { first_name, last_name, street, city, postal_code, country: "IN" }
+}
+```
+
+GTM me isko "User-Provided Data" variable (Data Layer variable `user_data`) se Google Ads conversion tag ke Enhanced Conversions me map karo. **Dhyan rahe:** `user_data` ko GA4 event parameters me mat bhejna — GA4 me PII (naam/phone/address) bhejna allowed nahi hai.

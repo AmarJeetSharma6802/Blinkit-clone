@@ -1,0 +1,213 @@
+.address-page,
+.checkout-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 30px 16px 60px;
+}
+
+.address-title {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.address-subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.address-row {
+  display: flex;
+  gap: 14px;
+}
+
+.address-row .address-field {
+  flex: 1;
+}
+
+.address-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.address-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.address-field input {
+  padding: 11px 12px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.address-field input:focus {
+  border-color: #0c831f;
+}
+
+.address-field input.has-error {
+  border-color: #d32f2f;
+}
+
+.address-error {
+  color: #d32f2f;
+  font-size: 12px;
+}
+
+.address-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.address-submit,
+.checkout-pay {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0c831f;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkout-pay:disabled {
+  background-color: #a5a5a5;
+  cursor: not-allowed;
+}
+
+.address-cancel,
+.address-change,
+.address-delete {
+  padding: 8px 16px;
+  border: 1px solid #0c831f;
+  border-radius: 6px;
+  background: #fff;
+  color: #0c831f;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.address-delete {
+  border-color: #d32f2f;
+  color: #d32f2f;
+}
+
+.address-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.address-card-icon {
+  color: #0c831f;
+  font-size: 20px;
+  padding-top: 2px;
+}
+
+.address-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.address-card-name {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.address-card-text {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.address-card-phone {
+  color: #666;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.address-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Checkout */
+.checkout-section {
+  margin-bottom: 24px;
+}
+
+.checkout-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.checkout-summary {
+  background: #fff;
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.checkout-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.checkout-line.total {
+  border-top: 1px solid rgb(227, 227, 227);
+  margin-top: 6px;
+  padding-top: 12px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.checkout-pay {
+  width: 100%;
+}
+
+.checkout-hint {
+  color: #666;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+@media (max-width: 500px) {
+  .address-row {
+    flex-direction: column;
+  }
+
+  .address-card {
+    flex-wrap: wrap;
+  }
+
+  .address-card-actions {
+    flex-direction: row;
+    width: 100%;
+  }
+}
